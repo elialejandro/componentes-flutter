@@ -1,5 +1,6 @@
 
 import 'package:componentes/src/pages/alert_page.dart';
+import 'package:componentes/src/providers/menu_provider.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -10,26 +11,38 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Home Page'),
       ),
-      body: _crearMenu(),
+      body: _crearMenu( context ),
     );
   }
 
-  ListView _crearMenu() {
-    return ListView(
-      children: _crearItems(),
+  Widget _crearMenu( context ) {
+
+    /*menuProvider.cargarMenu()
+      .then( (datos) {
+        print(datos);
+      }); */
+
+    return FutureBuilder(
+      future: menuProvider.cargarMenu(),
+      initialData: [],
+      builder: (context, AsyncSnapshot<List<dynamic>> snapshot) {
+        return ListView(
+          children: _crearItems( snapshot.data, context ),
+        );
+      },
     );
   }
 
-  List<Widget> _crearItems() {
+  List<Widget> _crearItems( List<dynamic> items, context ) {
 
-    return [
-      ListTile(
-        title: Text('Uno'),
-      ),
-      ListTile(
-        title: Text('Dos'),
-      ),
-    ];
+    return items.map((item) {
+      return ListTile(
+        title: Text(item['titulo']),
+        onTap: () {
+          Navigator.pushNamed(context, item['ruta']);
+        },
+      );
+    }).toList();
 
   }
   
