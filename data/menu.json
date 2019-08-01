@@ -1,0 +1,19 @@
+{
+    "rutas": [
+        {
+            "ruta": "alert",
+            "titulo": "Alertas",
+            "icono": "add_alert"
+        },
+        {
+            "ruta": "avatar",
+            "titulo": "Avatars",
+            "icono": "account_circle"
+        },
+        {
+            "ruta": "card",
+            "titulo": "Cards",
+            "icono": "folder_open"
+        }
+    ]
+}

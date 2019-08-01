@@ -1,8 +1,7 @@
 
 
-import 'package:componentes/src/pages/home_page.dart';
-import 'package:componentes/src/pages/home_temp.dart';
 import 'package:flutter/material.dart';
+import 'package:componentes/src/routes/routes.dart';
  
 void main() => runApp(MyApp());
  
@@ -12,10 +11,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       // home: HomePageTemp(),
-      initialRoute: '/',
-      routes: <String, WidgetBuilder> {
-        '/' : (BuildContext context) => HomePage(),
-      },
+      initialRoute: 'home',
+      routes: getApplicationRoutes(),
     );
   }
 }
