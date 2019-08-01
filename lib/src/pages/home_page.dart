@@ -10,26 +10,27 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Home Page'),
       ),
-      body: Center(
-        child: RaisedButton(
-          child: Text('Abrir AlertPage'),
-          color: Colors.indigo,
-          textColor: Colors.white,
-          onPressed: () {
-            // final route = MaterialPageRoute(
-            //   builder: (context) {
-            //     return AlertPage();
-            //   }
-            // );
-
-            // Navigator.push(context, route);
-
-            Navigator.pushNamed(context, 'alert');
-
-          },
-        ),
-      ),
+      body: _crearMenu(),
     );
+  }
+
+  ListView _crearMenu() {
+    return ListView(
+      children: _crearItems(),
+    );
+  }
+
+  List<Widget> _crearItems() {
+
+    return [
+      ListTile(
+        title: Text('Uno'),
+      ),
+      ListTile(
+        title: Text('Dos'),
+      ),
+    ];
+
   }
   
 }
