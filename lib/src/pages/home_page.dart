@@ -1,7 +1,8 @@
 
-import 'package:componentes/src/pages/alert_page.dart';
-import 'package:componentes/src/providers/menu_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:componentes/src/providers/menu_provider.dart';
+import 'package:flutter_icons/material_icons.dart';
+
 
 class HomePage extends StatelessWidget {
 
@@ -37,6 +38,7 @@ class HomePage extends StatelessWidget {
 
     return items.map((item) {
       return ListTile(
+        leading: Icon( MaterialIcons.getIconData( item['icono'] ) ),
         title: Text(item['titulo']),
         onTap: () {
           Navigator.pushNamed(context, item['ruta']);

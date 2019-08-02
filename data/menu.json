@@ -3,17 +3,17 @@
         {
             "ruta": "alert",
             "titulo": "Alertas",
-            "icono": "add_alert"
+            "icono": "add-alert"
         },
         {
             "ruta": "avatar",
             "titulo": "Avatars",
-            "icono": "account_circle"
+            "icono": "account-circle"
         },
         {
             "ruta": "card",
             "titulo": "Cards",
-            "icono": "folder_open"
+            "icono": "folder-open"
         }
     ]
 }
