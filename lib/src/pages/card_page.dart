@@ -10,8 +10,24 @@ class CardPage extends StatelessWidget {
         title: Text('Card page'),
       ),
       body: ListView(
+        padding: EdgeInsets.all(10.0),
         children: <Widget>[
           _crearTarjetaUno(),
+          SizedBox(height: 10.0,),
+          _crearTarjetaDos(),
+          SizedBox(height: 10.0,),
+          _crearTarjetaUno(),
+          SizedBox(height: 10.0,),
+          _crearTarjetaDos(),
+          SizedBox(height: 10.0,),
+          _crearTarjetaUno(),
+          SizedBox(height: 10.0,),
+          _crearTarjetaDos(),
+          SizedBox(height: 10.0,),
+          _crearTarjetaUno(),
+          SizedBox(height: 10.0,),
+          _crearTarjetaDos(),
+          SizedBox(height: 10.0,),
         ],
       ),
     );
@@ -33,5 +49,29 @@ class CardPage extends StatelessWidget {
       ),
     );
   }
+
+  _crearTarjetaDos() {
+    return Card(
+      elevation: 10.0,
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        children: <Widget>[
+          FadeInImage(
+            placeholder: AssetImage('assets/jar-loading.gif'),
+            image: NetworkImage('https://cdn.mos.cms.futurecdn.net/FUE7XiFApEqWZQ85wYcAfM.jpg'),
+            height: 300.0,
+            fit: BoxFit.cover,
+          ),
+          Container(
+            padding: EdgeInsets.all(10.0),
+            child: Text('Paisaje'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  
+
 }
 
